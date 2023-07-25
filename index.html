@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi sitio web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Logo</h1>
+            </div>
+            <div class="boton">
+                <label for="btn-menu">Menu</label>
+            </div>
+            <input type="checkbox" name="" id="btn-menu">
+            <nav class="menu">
+                <a href="index.html" class="inicio">Inicio</a>
+                <a href="productos.html" class="modelos">Productos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="separador"></div>
+
+    <div class="contenedor-perfil">
+        <div class="banner">
+            <img src="images/image3.jpg" alt="" srcset="">
+        </div>
+    </div>
+
+    <div class="contenedor-info">
+        <div class="profile-pic">
+            <img src="img/profile.png" alt="Imagen de perfil">
+        </div>
+
+        <div class="social-media">
+            <a class="social-icon instagram" href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="social-icon github" href="#">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a class="social-icon twitter" href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+
+        </div>
+        <div class="botones">
+            <div class="botones-izquierda">
+
+                <button class="button"><a href="https://web.telegram.org/">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telegram" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p>Telegram</p>
+
+                </button></a>
+                <!-- Posibilidad de miembros vip -->
+                <!-- <a href="tiendavip.html">
+                    <button type="boton" class="button-rosa">Miembro VIP</button>
+                </a>
+                 -->
+                <a href="productos.html">
+                    <button type="boton" class="button-rosa">Productos</button>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="textBox">
+            <h2>Nosotros</h2>
+            <div class="contenedor-texto-nosotros">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus, magni.
+                    In, assumenda maxime ea voluptatem tenetur corrupti pariatur nemo.
+                    orem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus, magni.
+                    In, assumenda maxime ea voluptatem tenetur corrupti pariatur nemo
+                </p>
+            </div>
+            <div class="btn-rosa">
+                <a href="productos.html"><button class="button-rosa">Ver Productos</button></a>
+            </div>
+        </div>
+        <div class="imgBox">
+            <img src="images/6.jpg" alt="imagen">
+        </div>
+    </div>
+
+    <!-- max slider es el body y caja slide es el container -->
+
+    <!-- https://www.tigercodeyt.com/2023/01/responsive-card-slider-using-html-css.html -->
+
+    <div class="max-slider">
+        <div class="caja-slide">
+
+            <div class="slider mySwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="image-items swiper-wrapper" id="swiper-wrapper-c36db103070d33282" aria-live="polite"
+                    style="cursor: grab;">
+                    <div class="image swiper-slide swiper-slide-active" role="group" aria-label="1 / 9"
+                        data-swiper-slide-index="0" style="width: 112px; margin-right: 30px;"><a
+                            href="product.html"><img src="./images/image1.jpg" alt=""></a></div>
+                    <div class="image swiper-slide swiper-slide-next" role="group" aria-label="2 / 9"
+                        data-swiper-slide-index="1" style="width: 112px; margin-right: 30px;"><img src="./images/6.jpg"
+                            alt=""></div>
+                    <div class="image swiper-slide" role="group" aria-label="3 / 9" data-swiper-slide-index="2"
+                        style="width: 112px; margin-right: 30px;"><img src="./images/rsz_4.jpg" alt=""></div>
+                    <div class="image swiper-slide" role="group" aria-label="4 / 9" data-swiper-slide-index="3"
+                        style="width: 112px; margin-right: 30px;"><img src="./images/6.jpg" alt=""></div>
+                    <div class="image swiper-slide" role="group" aria-label="5 / 9" data-swiper-slide-index="4"
+                        style="width: 112px; margin-right: 30px;"><a href="product.html"></a><img src="./images/6.jpg"
+                            alt=""></div>
+                    <div class="image swiper-slide" role="group" aria-label="6 / 9" data-swiper-slide-index="5"
+                        style="width: 112px; margin-right: 30px;"><a href="product.html"></a><img src="./images/rsz_4.jpg" alt=""></div>
+                    <div class="image swiper-slide" role="group" aria-label="7 / 9" data-swiper-slide-index="6"
+                        style="width: 112px; margin-right: 30px;"><a href="product.html"></a><img src="./images/rsz_4.jpg" alt=""></div>
+                    <div class="image swiper-slide" role="group" aria-label="8 / 9" data-swiper-slide-index="7"
+                        style="width: 112px; margin-right: 30px;"><a href="product.html"></a><img src="./images/rsz_4.jpg" alt=""></div>
+                    <div class="image swiper-slide" role="group" aria-label="9 / 9" data-swiper-slide-index="8"
+                        style="width: 112px; margin-right: 30px;"><a href="product.html"></a><img src="./images/rsz_4.jpg" alt=""></div>
+                </div>
+                <div class="swiper-button-next arrowButton right" tabindex="0" role="button" aria-label="Next slide"
+                    aria-controls="swiper-wrapper-c36db103070d33282"></div>
+                <div class="swiper-button-prev arrowButton left" tabindex="0" role="button" aria-label="Previous slide"
+                    aria-controls="swiper-wrapper-c36db103070d33282"></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+   
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <div class="separador2"></div>
+</body>
+
+</html>
+
+<footer>
+    <div class="footer-container">
+        <p>© 2023 Mi Empresa</p>
+        <ul>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+    <div class="social-icons">
+        <a class="social-icon twitter" href="#">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <!-- <a class="social-icon facebook" href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a> -->
+        <a class="social-icon instagram" href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a class="social-icon github" href="#">
+            <i class="fab fa-tiktok"></i>
+        </a>
+</footer>
+
+</html>

@@ -1,0 +1,714 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+body{
+  background-color: #181818;
+}
+/* inicio del banner */
+.contenedor-perfil{
+position: relative;
+}
+
+.banner{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content:center ;
+    overflow: hidden;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenedor-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    background-color:  #101922;
+    padding: 10px;
+  }
+  /* foto de perfil */
+  
+  .profile-pic {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .profile-pic img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+
+  .social-media{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .botones-izquierda{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20px;
+    width: 100%;
+  }
+
+  /* inicio botones */
+
+  /* telegram  */
+  .button {
+    transform: scale(1.2);
+    font-family: inherit;
+    background: #2CA0D9;
+    color: white;
+    padding: 0.35em 0;
+    font-size: 17px;
+    border: none;
+    border-radius: 480px;
+    letter-spacing: 0.08em;
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 2.5em;
+    padding-left: 2.8em;
+    padding-right: 0.92em;
+    margin: 10px 30px 10px 30px;
+  }
+  
+  .button .icon {
+    background: #fff;
+    height: 2em;
+    width: 2em;
+    border-radius: 2em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0.4em;
+    top: 0.3em;
+    transition: all 0.5s;
+  }
+  
+  .icon svg {
+    margin-left: 0.1em;
+    transition: all 0.5s;
+    color: #2CA0D9;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  
+  .button:hover .icon svg {
+    transform: rotate(360deg);
+  }
+  
+  .button:hover .icon {
+    width: calc(100% - 0.85rem);
+    border-radius: 0.5em;
+  }
+
+
+/* fin boton telegram */
+.button-rosa {
+  background-color: transparent;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #40de32;
+  border-radius: 35px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+  /* text-decoration: none; */
+  transition: 0.3s ease all;
+  z-index: 1;
+  margin-right: 10px
+  
+}
+
+.button-rosa:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #40de32;
+  z-index: -1;
+  border-radius: 35px;
+}
+
+.button-rosa:hover, button:focus {
+  color: white;
+}
+
+.button-rosa:hover:before, button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button-rosa:active {
+  transform: scale(0.9);
+}
+  
+  @keyframes glowing_54134 {
+    0% {
+      background-position: 0 0;
+    }
+  
+    50% {
+      background-position: 400% 0;
+    }
+  
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+
+/*about me */
+ .content {
+    background-color: #181818;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px 0;
+}
+.content .textBox{
+    position: relative;
+    align-items: center;
+    width: 500px;
+    margin-left: 0 15px;
+    
+}   
+.content .textBox h2 {
+    color: #FFFFFF;
+    font-size: 30px;
+    line-height: 1.5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align:center;
+    margin-bottom: 15px;
+}
+.content .textBox h2 span{
+    font-size: 2em;
+}
+    .content .textBox p{           
+     color: #FFFFFF;
+     padding: 10px 25px;
+     text-align: justify;
+}
+
+.caja-boton{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .imgBox{
+  margin: top 30px;
+  text-align: center;
+margin-left: 50px;
+margin-top: 30px;
+justify-content: flex-start; 
+}
+
+.content .imgBox img{   
+position: relative;
+max-width: 270px;
+margin: 10 0px;
+} 
+
+ /* iconos redes sociales  */
+
+  :root {
+	--link-size: 64px; 
+	--trans-property: all 0.3s ease;
+  }
+  .social-icons {
+    width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.social-icon {
+	display: flex;
+	position: relative;
+	overflow: hidden; 
+	width: var(--link-size);
+	height: var(--link-size);
+	margin: 8px;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.12);
+	text-decoration: none;
+	transition: var(--trans-property);
+}
+.social-icon i {
+	margin: auto;
+	font-size: 24px;
+	color: #67798e;
+	z-index: 1; 
+	transition: var(--trans-property);
+}
+.social-icon:after {
+	content: "";
+	width: var(--link-size);
+	height: var(--link-size);
+	position: absolute;
+	transform: translate(0, var(--link-size));
+	border-radius: 50%;
+	transition: var(--trans-property);
+}
+.social-icon.twitter:after {
+	background-color: #1da1f2;
+}
+.social-icon.github:after {
+	background-color: #24292e;
+}
+
+.social-icon.instagram:after {
+	background-image:
+    radial-gradient(circle at 30% 107%,
+    #fdf497 0%, #fdf497 5%, 
+    #fd5949 45%, #d6249f 60%,
+    #285AEB 90%);
+}
+.social-icon.facebook:after {
+	background-color: #1769ff;
+}
+/*** Animations ***/
+.social-icon:hover {
+	transform: translateY(-4px);
+	box-shadow: 0px 4px 12px rgba(0,0,0,0.16);
+}
+.social-icon:hover i {
+	color: #fff;
+}
+.social-icon:hover:after {
+	transform: translate(0) scale(1.2);
+}
+
+
+
+/* importante */
+
+.texto-importante{
+  display: flex;
+  flex-direction: column;
+  height: 30px auto;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+}
+.textop{
+  width: 80%;
+  color: #fff;
+  /* box-sizing: border-box;
+  border: solid 2px #fff; */
+  text-align: center;
+  margin: 30px 0px;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .contenedor-info {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .profile-pic img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .botones-izquierda {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botones-izquierda a{
+text-decoration: none;
+  }
+
+  .btn-rosa{
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-rosa a{
+    text-decoration: none;
+      }
+
+  .button-container button {
+    padding-bottom: 40px ;
+  }
+}
+
+.caja-texto{
+  display: flex;
+  flex-direction: column;
+  height: 30px auto;
+  background-color: #181818;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.textop{
+  width: 80%;
+  height: 300px;
+  color: #fff;
+  
+  text-align: center;
+  margin: 30px 0px;
+  font-size: 18px;
+}
+
+.titulo{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 10px 0px;
+  background-color: #181818 ;
+}
+.titulo h2{
+  color: #fff;
+  display: block;
+}
+
+
+.contenedor-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  /* background-image: url(../images/banner.jpg); */
+  background-color: #181818;
+}
+
+
+.contenedor-texto{
+  width: 60%;
+  color: #fff;
+  font-size: 18px;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  backdrop-filter: blur(0.4rem);
+  text-align: center;
+}
+.separador2{
+  height: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile-pic img {
+    width: 100px;
+    height: 100px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .botones {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .botones-izquierda {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .button-rosa{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Styles for screens smaller than 768px */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .content .textBox {
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .content .textBox p{
+    margin: 0px;
+    padding: 5px;
+      }
+  .content .imgBox {
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+  }
+  .content .imgBox img {
+    max-width: 100%;
+    height: 400px;
+    margin-top: 250px;
+  }
+}
+
+/* Styles for screens larger than 768px */
+@media (min-width: 768px) {
+  .content .textBox {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    
+    /* margin-left: 100px; */
+  }
+
+ 
+  .content .imgBox {
+    margin: 0;
+    text-align: center;
+    justify-content: flex-start;
+    margin-right: 250px;
+    
+  }
+  .button, .button-rosa {
+    text-decoration: none;
+  }
+}
+
+
+
+@media (max-width: 1200px) {
+  .contenedor-info {
+    flex-direction: column;
+    height: auto;
+  }
+  .profile-pic{
+    height: 200px;
+  }
+  .profile-pic img {
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+    transform: scale(0.5);
+  }
+
+  .botones-izquierda {
+    margin-right: 0px;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .botones-izquierda a{
+text-decoration: none;
+  }
+
+  .btn-rosa{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-rosa a{
+    text-decoration: none;
+      }
+
+  .button-container button {
+    padding-bottom: 40px ;
+  }
+
+  .button-rosa{
+    margin: 20px 0 20px 0;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .content {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .content .textBox {
+    width: 300px;
+    height: 300px;
+    /* padding: 30px 80px; */
+    box-sizing: border-box;
+  }
+  .content .imgBox {
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+  }
+  .separador3{
+    display: none;
+  }
+  .contenedor-texto{
+    width: 300px;
+    height: auto;
+  }
+}
+
+/* Styles for screens larger than 768px */
+@media (min-width: 1200px) {
+  .content{
+    width: 100%;
+  }
+  .content .textBox {
+    width: 60%;
+    margin: 0 30px;
+    text-align: center;
+    /* margin-left: 50px; */
+  }
+  .content .imgBox {
+    width: 30%;
+    margin: 0;
+    text-align: center;
+    justify-content: flex-start;
+    margin-right: 0px;
+  }
+  .button, .button-rosa {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+.button a:visited{
+  color:#fff;
+  
+}
+.button a{
+  text-decoration: none;
+}
+
+/* SLIDER */
+.max-slider{
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+}
+
+.caja-slide{
+  width: 100%;
+  height: 350px;
+}
+
+.slider{
+  margin: 0 40px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider .image-items{
+  height: 350px;
+}
+
+.slider .image-items .image{
+  height: 100%;
+}
+
+.slider .image-items .image img{
+  height: 100%;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.arrowButton{
+  position: absolute !important;
+  top: 50% !important;
+  color: black !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  background-color: white !important;
+  padding: 10px !important;
+}
+
+.arrowButton.left{
+  left: 0 !important;
+}
+
+.arrowButton.right{
+  right: 0 !important;
+}
+
+.arrowButton::after{
+  font-size: 20px !important;
+}
+
+@media only screen and (max-width:868px){
+  .slider{
+      margin: 0 20px;
+  }
+}
+
+/* fin slider responsive */
+
+.button, .button-rosa {
+  text-decoration: none;
+}
+
+
+.contenedor-texto-nosotros{
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  backdrop-filter: blur(0.4rem);
+  margin-bottom: 15px;
+}
+
+.separador3{
+  height: 150px;
+  background-color: transparent;
+}
