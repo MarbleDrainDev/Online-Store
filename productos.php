@@ -45,7 +45,7 @@ include 'config.php';
         echo '<section class="products">
 		<div class="all-products">
 			<div class="product">
-            <img src="data:image/jpg;base64,' . base64_encode($row['Imagen']) . '" alt="producto-img">
+            <img src="data:image/jpeg;base64,' . base64_encode($row['Imagen']) . '" alt="producto-img">
 				<div class="product-info">
 					<h4 class="product-title">' . $row['nombre'] . '</h4>
 					<p class="product-price">$' . $row['precio'] . '</p>

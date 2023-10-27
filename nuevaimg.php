@@ -41,29 +41,15 @@ include 'config.php';
 ?>
 <h2>Editar Producto</h2>
 
-
 <!-- Se usa value para insertar el nombre del producto -->
 
-    <form action="modificar_producto.php?id=<?php echo $row['id']?>" method="post" enctype="multipart/form-data">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required value="<?php echo $row['nombre'];?>"><br><br>
-        
-        <label for="precio">Precio:</label>
-        <input type="number" name="precio" value="<?php echo $row['precio'];?>"><br><br>
-        
-        <label for="descripcion">Descripción:</label>
-        <textarea name="descripcion" ></textarea><br><br>
-        
+    <form action="modificar_img.php?id=<?php echo $row['id']?>" method="post" enctype="multipart/form-data">
+
         <img src="data:image/jpeg;base64,<?php echo base64_encode($row['Imagen']); ?>" alt="">
+        
+        <input type="file" name="imagen"><br><br>
         
         <input type="submit" value="Editar Cambios">
     </form>
 </body>
 </html>
-
-<div class="product">
-   
-    <div class="product-info">
-        <!-- Resto de la información del producto -->
-    </div>
-</div>

@@ -1,47 +1,26 @@
 <?php
-$servername = "localhost"; // Nombre del servidor de la base de datos
-$username = "root";        // Nombre de usuario de la base de datos
-$password = "";            // Contraseña de la base de datos
-$database = "mi_tienda";   // Nombre de la base de datos
 include 'config.php';
 // Obtener datos del formulario
 $id = $_REQUEST['id'];
+
 $nombre = $_POST['nombre'];
 $precio = $_POST['precio'];
 $descripcion = $_POST['descripcion'];
 
-// $Imagen = addslashes(file_get_contents($_FILES['Imagen']['tmp_name']));
+$imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 
-// Verificar si se cargó un archivo de imagen
-if (isset($_FILES['Imagen']['tmp_name']) && !empty($_FILES['Imagen']['tmp_name'])) {
-    $Imagen = addslashes(file_get_contents($_FILES['Imagen']['tmp_name']));
-} else {
-    // Si no se cargó una imagen, conserva la imagen existente en la base de datos
-    $sql = "SELECT Imagen FROM productos WHERE id = $id";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $Imagen = $row['Imagen'];
+$sql = "UPDATE productos SET nombre='$nombre', precio='$precio', descripcion='$descripcion', imagen='$imagen' WHERE id= '$id'";
+
+$resultado = $conn->query($sql);
+
+if ($resultado){
+    header("location:crud.php");
+}
+else{
+    echo "hubo problemas al modificarse";
 }
 
 
-// Actualizar los datos en la base de datos
-$sql = "UPDATE productos SET nombre=?, precio=?, descripcion=?, Imagen=? WHERE id=?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssi", $nombre, $precio, $descripcion, $Imagen, $id);
-
-if ($stmt->execute()) {
-    $response = array(
-        'success' => true,
-        'message' => 'Producto editado con éxito.'
-    );
-} else {
-    $response = array(
-        'success' => false,
-        'message' => 'Error al editar el producto: ' . $stmt->error
-    );
-}
-
-$stmt->close();
 
 ?>
 

@@ -57,12 +57,13 @@
             <tr>
                 <td><?php echo $row['id'] ?></td>
                 <td><?php echo $row['nombre'] ?></td>
-                <td><img height="100px" src="data:image/jpg;base64, <?php echo base64_encode($row['Imagen']); ?>"/></td>
+                <td><img height="100px" src="data:image/jpeg;base64, <?php echo base64_encode($row['Imagen']); ?>"/></td>
                 <td>$<?php echo $row['precio'] ?></td>
 
                 <td class="crud-actions">
-                    <a class="editar-link" href="modificar.php?id=<?php echo $row['id']; ?>">Editar</a>
-                    <a class="eliminar-link"href="eliminar.php?id=<?php echo $row['id']; ?>">Eliminar</a>
+                    <a class="editar-link" href="modificar.php?id=<?php echo $row['id']; ?>">Editar Datos</a>
+                    <a class="editar-link" href="nuevaimg.php?id=<?php echo $row['id']; ?>">Editar Imagen</a>
+                    <a class="eliminar-link"href="eliminar.php?id=<?php echo $row['id']; ?>">Eliminar Producto</a>
                 </td>
                 
                    
