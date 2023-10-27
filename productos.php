@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive slider/carousel</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="css/slider_main.css"/>
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/tienda.css">
+    <link rel="stylesheet" href="css/carta.css">
     <link rel="stylesheet" href="css/icons-social.css">
     <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-    <header class="header">
+<header class="header">
         <div class="container">
             <div class="logo">
                 <h1>Online Store</h1>
@@ -33,19 +32,43 @@
     </header>
     <div class="separador"></div>
 
-<div id="app"></div>
+    <div class="caja-cartas">
+<?php
+include 'config.php';
+
+    $sql = "SELECT * FROM productos";
+    $resultado = $conn->query($sql);
+
+    while($row = $resultado->fetch_assoc()){
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.6/index.min.js"></script>
-<script type="text/javascript" src="script-slide.js"></script>
+        echo '<section class="products">
+		<div class="all-products">
+			<div class="product">
+            <img src="data:image/jpg;base64,' . base64_encode($row['Imagen']) . '" alt="producto-img">
+				<div class="product-info">
+					<h4 class="product-title">' . $row['nombre'] . '</h4>
+					<p class="product-price">$' . $row['precio'] . '</p>
+					<a class="product-btn" href="#">Ver más</a>
 
+				</div>
+			</div>
+		</div>
+	</section>';
+
+    }
+
+    
+?>
+</div>
+
+<script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </body>
 <footer>
     <div class="footer-container">
-        
+        <p>© 2023 Mi Empresa</p>
         <ul>
+            
             <li><a href="#">Política de privacidad</a></li>
             <li><a href="#">Términos y condiciones</a></li>
             <li><a href="#">Contacto</a></li>
@@ -65,4 +88,9 @@
             <i class="fab fa-tiktok"></i>
         </a>
 </footer>
+
+
+
 </html>
+
+

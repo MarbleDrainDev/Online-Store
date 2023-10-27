@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive slider/carousel</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="css/slider_main.css"/>
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/icons-social.css">
     <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>Online Store</h1>
+                <h3>Online Store</h3>
             </div>
             <div class="boton">
                 <label for="btn-menu">Menu</label>
@@ -33,14 +30,23 @@
     </header>
     <div class="separador"></div>
 
-<div id="app"></div>
-
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.1/umd/react.production.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.1/umd/react-dom.production.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.6/index.min.js"></script>
-<script type="text/javascript" src="script-slide.js"></script>
-
+    <h2>Formulario de Producto</h2>
+    <form action="guardar_producto.php" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br><br>
+        
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" required><br><br>
+        
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" required></textarea><br><br>
+        
+        <input type="file" name="Imagen"><br><br>
+        <input type="submit" value="Guardar Producto">
+    </form>
+    <div class="separador"></div>
+</body>
+</html>
 </body>
 <footer>
     <div class="footer-container">

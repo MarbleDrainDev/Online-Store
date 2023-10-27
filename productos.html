@@ -89,6 +89,13 @@
         </div>
 
 
+
+
+
+
+
+        
+
 </body>
 <footer>
     <div class="footer-container">
@@ -115,3 +122,49 @@
 </footer>
 
 </html>
+
+<script>
+    // Función para cargar y mostrar los productos desde el servidor
+    function cargarProductos() {
+        fetch('productos.php') // Ruta al archivo PHP que obtiene los productos
+            .then(response => response.json())
+            .then(data => {
+                const catalogo = document.getElementById('catalogo');
+                catalogo.innerHTML = ''; // Limpiar el catálogo
+
+                data.forEach(producto => {
+                    const divCaja = document.createElement('div');
+                    divCaja.classList.add('caja');
+
+                    const divCard = document.createElement('div');
+                    divCard.classList.add('card');
+
+                    const divInfo = document.createElement('div');
+                    divInfo.classList.add('card-info');
+
+                    const titulo = document.createElement('p');
+                    titulo.classList.add('text-title');
+                    titulo.textContent = producto.nombre;
+
+                    const descripcion = document.createElement('p');
+                    descripcion.classList.add('text-body');
+                    descripcion.textContent = producto.descripcion;
+
+                    const precio = document.createElement('p');
+                    precio.classList.add('text-body');
+                    precio.textContent = 'Precio: $' + producto.precio;
+
+                    divInfo.appendChild(titulo);
+                    divInfo.appendChild(descripcion);
+                    divInfo.appendChild(precio);
+                    divCard.appendChild(divInfo);
+                    divCaja.appendChild(divCard);
+                    catalogo.appendChild(divCaja);
+                });
+            })
+            .catch(error => console.error('Error al cargar los productos:', error));
+    }
+
+    // Llama a la función para cargar los productos al cargar la página
+    cargarProductos();
+</script>
