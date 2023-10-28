@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario para modificar el producto">
     <title>Document</title>
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/header.css">
@@ -52,7 +53,7 @@ include 'config.php';
         <input type="number" name="precio" value="<?php echo $row['precio'];?>"><br><br>
         
         <label for="descripcion">Descripción:</label>
-        <textarea name="descripcion" ></textarea><br><br>
+        <input type="text" name="descripcion" value="<?php echo $row['descripcion'];?>"><br><br>
         
         <img src="data:image/jpeg;base64,<?php echo base64_encode($row['Imagen']); ?>" alt="">
         

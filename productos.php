@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de productos">
     <title>Productos</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
@@ -55,10 +56,8 @@ include 'config.php';
 			</div>
 		</div>
 	</section>';
-
     }
 
-    
 ?>
 </div>
 
@@ -74,19 +73,8 @@ include 'config.php';
             <li><a href="#">Contacto</a></li>
         </ul>
     </div>
-    <div class="social-icons">
-        <a class="social-icon twitter" href="#">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <!-- <a class="social-icon facebook" href="#">
-            <i class="fab fa-facebook-f"></i>
-        </a> -->
-        <a class="social-icon instagram" href="#">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a class="social-icon github" href="#">
-            <i class="fab fa-tiktok"></i>
-        </a>
+    
+      
 </footer>
 
 

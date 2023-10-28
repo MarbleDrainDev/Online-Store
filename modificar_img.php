@@ -20,43 +20,14 @@ else{
     echo "hubo problemas al modificarse";
 }
 
-// // Verificar si se cargó un archivo de imagen
-// if (isset($_FILES['Imagen']['tmp_name']) && !empty($_FILES['Imagen']['tmp_name'])) {
-//     $Imagen = addslashes(file_get_contents($_FILES['Imagen']['tmp_name']));
-// } else {
-//     // Si no se cargó una imagen, conserva la imagen existente en la base de datos
-//     $sql = "SELECT Imagen FROM productos WHERE id = $id";
-//     $result = $conn->query($sql);
-//     $row = $result->fetch_assoc();
-//     $Imagen = $row['Imagen'];
-// }
-
-
-// Actualizar los datos en la base de datos
-// $sql = "UPDATE productos SET nombre=?, precio=?, descripcion=?, Imagen=? WHERE id=?";
-// $stmt = $conn->prepare($sql);
-// $stmt->bind_param("ssssi", $nombre, $precio, $descripcion, $Imagen, $id);
-
-// if ($stmt->execute()) {
-//     $response = array(
-//         'success' => true,
-//         'message' => 'Producto editado con éxito.'
-//     );
-// } else {
-//     $response = array(
-//         'success' => false,
-//         'message' => 'Error al editar el producto: ' . $stmt->error
-//     );
-// }
-
-// $stmt->close();
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Resultado de la inserción</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 <script>

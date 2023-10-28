@@ -1,4 +1,4 @@
-class CitiesSlider extends React.Component {
+class ProductSlider extends React.Component {
   constructor(props) {
     super(props);
 
@@ -56,12 +56,12 @@ class CitiesSlider extends React.Component {
       this.props.slides.map((slide, index) =>
       React.createElement("div", {
         className: classNames('slider__slide', { 's--active': activeSlide === index, 's--prev': prevSlide === index }),
-        key: slide.city },
+        key: slide.name },
 
       React.createElement("div", { className: "slider__slide-content" },
-      React.createElement("h3", { className: "slider__slide-subheading" }, slide.country || slide.city),
+      React.createElement("h3", { className: "slider__slide-subheading" }, slide.availability || slide.name),
       React.createElement("h2", { className: "slider__slide-heading" },
-      slide.city.split('').map(l => React.createElement("span", null, l))),
+      slide.name.split('').map(l => React.createElement("span", null, l))),
 
       React.createElement("a", { className: "slider__slide-readmore", onClick: this.redirectToInicioPage }, "Read More")
               ),
@@ -75,10 +75,6 @@ class CitiesSlider extends React.Component {
       React.createElement("div", { className: "slider__slide-part-inner", style: { backgroundImage: `url(${slide.img})` } }))))))),
 
 
-
-
-
-
       React.createElement("div", { className: "slider__control", onClick: () => this.changeSlides(-1) }),
       React.createElement("div", { className: "slider__control slider__control--right", onClick: () => this.changeSlides(1) })));
 
@@ -88,30 +84,26 @@ class CitiesSlider extends React.Component {
 
 const slides = [
 {
-  city: 'Iphone 14',
-  country: 'Disponible!',
+  name: 'Iphone 14',
+  availability: 'Disponible!',
   img: 'https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907_Full-Bleed-Image.jpg.large.jpg' },
 
-// {
-//   city: 'Earbuds',
-//   img: 'https://media.wired.com/photos/632b71c4f1e5c40d2b1bc705/191:100/w_1280,c_limit/AirPods-Pro-2nd-Gen-Gear.jpg' },
-
 {
-  city: 'Earbuds',
-  country: 'Disponible',
+  name: 'Earbuds',
+  availability: 'Disponible',
   img: 'https://media.wired.com/photos/632b71c4f1e5c40d2b1bc705/191:100/w_1280,c_limit/AirPods-Pro-2nd-Gen-Gear.jpg' },
 
 {
-  city: 'Ipad Pro',
-  country: 'Disponible!',
+  name: 'Ipad Pro',
+  availability: 'Disponible!',
   img: 'https://www.apple.com/v/ipad-pro/al/images/meta/ipad-pro_overview__glcw458o4byq_og.png?202305310334' },
 
 // {
-//   city: 'Moscow',
+//   name: 'Moscow',
 //   country: 'Russia',
 //   img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/moscow.jpg' }
 ];
 
 
 
-ReactDOM.render(React.createElement(CitiesSlider, { slides: slides }), document.querySelector('#app'));
+ReactDOM.render(React.createElement(ProductSlider, { slides: slides }), document.querySelector('#app'));

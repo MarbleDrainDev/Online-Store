@@ -7,27 +7,27 @@ $nombre = $_POST['nombre'];
 $precio = $_POST['precio'];
 $descripcion = $_POST['descripcion'];
 
-$imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
-
-$sql = "UPDATE productos SET nombre='$nombre', precio='$precio', descripcion='$descripcion', imagen='$imagen' WHERE id= '$id'";
+$sql = "UPDATE productos SET nombre='$nombre', precio='$precio', descripcion='$descripcion' WHERE id= '$id'";
 
 $resultado = $conn->query($sql);
 
 if ($resultado){
-    header("location:crud.php");
+    $response['success'] = true;
+    $response['message'] = "El producto se ha modificado exitosamente.";
 }
 else{
-    echo "hubo problemas al modificarse";
+    $response['success'] = false;
+    $response['message'] = "Hubo problemas al modificar el producto.";
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Resultado de la inserción</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resultado de la edición del producto"/>
 </head>
 <body>
 <script>
@@ -37,7 +37,7 @@ else{
         // Muestra un aviso de éxito
         alert(response.message);
         // Redirige al usuario a "productos.php"
-        window.location.href = 'productos.php';
+        window.location.href = 'crud.php';
     } else {
         // Muestra un aviso de error si la inserción falló
         alert(response.message);

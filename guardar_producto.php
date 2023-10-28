@@ -11,8 +11,6 @@ $descripcion = $_POST['descripcion'];
 
 $Imagen = addslashes(file_get_contents($_FILES['Imagen']['tmp_name']));
 
-
-
 // Insertar datos en la base de datos
 $sql = "INSERT INTO productos(nombre, precio, descripcion, Imagen) VALUES ('$nombre', '$precio', '$descripcion', '$Imagen')";
 
@@ -35,6 +33,8 @@ $conn->close();
 <html>
 <head>
     <title>Resultado de la inserción</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 <script>
