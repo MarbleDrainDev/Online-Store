@@ -49,10 +49,12 @@ include 'config.php';
             <img src="data:image/jpeg;base64,' . base64_encode($row['Imagen']) . '" alt="producto-img">
 				<div class="product-info">
 					<h4 class="product-title">' . $row['nombre'] . '</h4>
-					<p class="product-price">$' . $row['precio'] . '</p>
-					<a class="product-btn" href="#">Ver más</a>
+					<p class="product-price">$' . $row['precio'] . '</p>';
+                    
+                    // Aquí tienes el enlace "Ver más" concatenado
+    echo '<a class="product-btn" href="ver_producto.php?id=' . $row['id'] . '">Ver más</a>';  
 
-				</div>
+		echo '</div>
 			</div>
 		</div>
 	</section>';
@@ -60,7 +62,6 @@ include 'config.php';
 
 ?>
 </div>
-
 <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </body>
 <footer>
@@ -73,12 +74,7 @@ include 'config.php';
             <li><a href="#">Contacto</a></li>
         </ul>
     </div>
-    
-      
 </footer>
-
-
-
 </html>
 
 
