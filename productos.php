@@ -42,7 +42,6 @@ include 'config.php';
 
     while($row = $resultado->fetch_assoc()){
 
-
         echo '<section class="products">
 		<div class="all-products">
 			<div class="product">
@@ -50,9 +49,8 @@ include 'config.php';
 				<div class="product-info">
 					<h4 class="product-title">' . $row['nombre'] . '</h4>
 					<p class="product-price">$' . $row['precio'] . '</p>';
-                    
                     // Aquí tienes el enlace "Ver más" concatenado
-    echo '<a class="product-btn" href="ver_producto.php?id=' . $row['id'] . '">Ver más</a>';  
+    echo '<a class="product-btn" href="producto.php?id=' . $row['id'] . '">Ver más</a>';  
 
 		echo '</div>
 			</div>
@@ -64,7 +62,7 @@ include 'config.php';
 </div>
 <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </body>
-<footer>
+<!-- <footer>
     <div class="footer-container">
         <p>© 2023 Mi Empresa</p>
         <ul>
@@ -74,7 +72,7 @@ include 'config.php';
             <li><a href="#">Contacto</a></li>
         </ul>
     </div>
-</footer>
+</footer> -->
 </html>
 
 

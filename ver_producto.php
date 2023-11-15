@@ -73,14 +73,4 @@ if ($resultado->num_rows > 0) {
 
     <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
 </body>
-<footer>
-    <div class="footer-container">
-        <p>© 2023 Mi Empresa</p>
-        <ul>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Términos y condiciones</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </div>
-</footer>
 </html>
