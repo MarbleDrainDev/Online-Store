@@ -189,7 +189,7 @@ body {
   position: absolute;
   left: -2px;
   top: -3px;
-  width: calc(100% + 4px);
+  width: calc(0% + 4px);
   height: calc(100% + 6px);
   background: rgba(255, 255, 255, 0.4);
   -webkit-transform: scaleX(0.3);
@@ -200,10 +200,12 @@ body {
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
+  background-color: transparent;
 }
 .slider__slide-readmore:hover:before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(17);
+          background-color: rgba(255, 255, 255, 0.4);
 }
 .slider__slide-parts {
   position: absolute;

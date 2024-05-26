@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Login de la pagina" />
+        <title>Register</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <!-- <link rel="stylesheet" href="css/slider_main.css"/> -->
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <!-- <link rel="stylesheet" href="css/icons-social.css"> -->
+        <script src="https://kit.fontawesome.com/1c2c2462bf.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/register.css">
+      </head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Online Store</h1>
+            </div>
+            <div class="boton">
+                <label for="btn-menu">Menu</label>
+            </div>
+            <input type="checkbox" name="" id="btn-menu">
+            <nav class="menu">
+                <a href="index.html" class="inicio">Inicio</a>
+                <a href="productos.php" class="modelos">Productos</a>
+                <a href="crud.php" class="modelos">CRUD</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="login">
+            <div><img src="../img/account_circle_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="https://fonts.google.com/icons?selected=Material+Symbols+Outlined:account_circle:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=user&icon.size=24&icon.color=%23e8eaed" class="main"></div> <br>
+            <hr>
+            <label for="estudiante">Selecciona una opción</label> <br> <br>
+            <input type="radio" name="Usuario" id="estudiante" required> 
+            <input type="radio" name="Usuario" id="restaurante">
+
+            <label for="estudiante" class="seleccion">Estudiante</label>
+            <label for="restaurante" class="seleccion">Restaurante</label> <br>
+
+            <div class="user est">
+                <form action="" method="post">
+                    <input type="text" name="nombres" id="nombres" placeholder="Nombre" required>
+                    <input type="text" name="apellidos" id="apellidos" placeholder="Apellido" required>
+                    <input type="text" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    <input type="hidden" name="tipoUsuario" value="estudiante">
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            
+            <div class="user rest">
+                <form action="" method="post">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                    <input type="text" name="direccion" id="direccion" placeholder="Direccion" required>
+                    <input type="text" name="numeroTel" id="numeroTel" placeholder="Telefono" required>
+                    <input type="hidden" name="tipoUsuario" value="restaurante">
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+            <label for=""><a href="">You already have an account? Login</a></label> <br>
+        </section>
+    </main>
+    <script src="register.js"></script>
+</body>
+<footer>
+    <div class="footer-container">
+        
+        <ul>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+    <!-- <div class="social-icons">
+        <a class="social-icon twitter" href="https://twitter.com/?lang=es">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a class="social-icon facebook" href="https://www.facebook.com/">
+            <i class="fab fa-facebook-f"></i>
+        </a> -->
+        <!-- <a class="social-icon instagram" href="https://www.instagram.com/">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a class="social-icon github" href="https://github.com/">
+            <i class="fab fa-tiktok"></i>
+        </a> -->
+</footer>
+</html>

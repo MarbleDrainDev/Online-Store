@@ -1,0 +1,20 @@
+.user{
+    display: none;
+}
+.checked{
+    display: block;
+}
+label{
+    color: white;
+}
+label.seleccion{
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.562);
+    border: solid 1px white;
+    /* margin-right: 5px; */
+    margin: 5px;
+    margin-top: 20px;
+}
+input[type="radio"]{
+    display: none;
+}

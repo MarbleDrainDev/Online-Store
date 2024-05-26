@@ -98,10 +98,6 @@ const slides = [
   availability: 'Disponible!',
   img: 'https://www.apple.com/v/ipad-pro/al/images/meta/ipad-pro_overview__glcw458o4byq_og.png?202305310334' },
 
-// {
-//   name: 'Moscow',
-//   country: 'Russia',
-//   img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/moscow.jpg' }
 ];
 
 

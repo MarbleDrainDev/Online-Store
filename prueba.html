@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurante</title>
+    </head>
+    <body>
+
+     <!--<?php
+    // Conexión a la base de datos
+    $servername = "localhost";
+    $username = "tu_usuario";
+    $password = "tu_contraseña";
+    $dbname = "restaurante";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("La conexión falló: " . $conn->connect_error);
+    }
+
+    // Verificar si se ha enviado el formulario
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Recoger los datos del formulario
+        $nombre = $_POST['nombre'];
+        $descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+        $categoria = $_POST['categoria'];
+
+        // Preparar la consulta SQL para insertar los datos
+        $sql = "INSERT INTO Comida (Nombre, Descripcion, Precio, ID_Categoria) VALUES ('$nombre', '$descripcion', '$precio', '$categoria')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "La comida se ha agregado correctamente.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    // Consulta SQL para obtener el historial de pedidos
+    $sql = "SELECT hp.ID_Pedido, e.Nombre AS Nombre_Estudiante, c.Nombre AS Nombre_Comida, cat.Nombre AS Nombre_Categoria, hp.Cantidad, hp.Fecha_Pedido
+            FROM Historial_Pedido hp
+            INNER JOIN Estudiante e ON hp.ID_Estudiante = e.ID_Estudiante
+            INNER JOIN Comida c ON hp.ID_Comida = c.ID_Comida
+            INNER JOIN Categoria cat ON c.ID_Categoria = cat.ID_Categoria";
+
+    $result = $conn->query($sql);
+
+    // Verificar si se ha enviado el formulario
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Recoger los datos del formulario
+        $descripcion = $_POST['descripcion'];
+        $fecha_inicio = $_POST['fecha_inicio'];
+        $fecha_fin = $_POST['fecha_fin'];
+        $descuento = $_POST['descuento'];
+
+        // Preparar la consulta SQL para insertar los datos
+        $sql = "INSERT INTO Promocion (Descripcion, Fecha_Inicio, Fecha_Fin, Descuento) VALUES ('$descripcion', '$fecha_inicio', '$fecha_fin', '$descuento')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "La promoción se ha creado correctamente.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    // Cerrar la conexión
+    $conn->close();
+    ?>
+
+-->
+
+    <h1>Restaurante</h1>
+
+    <!-- Sección para agregar comida -->
+    <h2>Agregar Comida</h2>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="descripcion">Descripción:</label><br>
+        <input type="text" id="descripcion" name="descripcion"><br>
+        <label for="precio">Precio:</label><br>
+        <input type="number" id="precio" name="precio" min="0"><br>
+        <label for="categoria">Categoría:</label><br>
+        <input type="text" id="categoria" name="categoria"><br>
+        <input type="submit" value="Agregar Comida">
+    </form>
+
+
+
+
+
+    <!-- Sección para mostrar historial de pedidos -->
+    <h2>Historial de Pedidos</h2>
+    <table border="1">
+        <tr>
+            <th>Número de Pedido</th>
+            <th>Nombre del Estudiante</th>
+            <th>Comida</th>
+            <th>Categoría</th>
+            <th>Cantidad</th>
+            <th>Fecha</th>
+        </tr>
+        <!-- <?php
+        // Mostrar los resultados de la consulta
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["ID_Pedido"] . "</td>";
+                echo "<td>" . $row["Nombre_Estudiante"] . "</td>";
+                echo "<td>" . $row["Nombre_Comida"] . "</td>";
+                echo "<td>" . $row["Nombre_Categoria"] . "</td>";
+                echo "<td>" . $row["Cantidad"] . "</td>";
+                echo "<td>" . $row["Fecha_Pedido"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>No hay pedidos registrados.</td></tr>";
+        }
+        ?>-->
+    </table>
+
+    <h1>Crear Promoción</h1>
+
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="descripcion">Descripción:</label><br>
+        <input type="text" id="descripcion" name="descripcion"><br>
+        <label for="fecha_inicio">Fecha de Inicio:</label><br>
+        <input type="date" id="fecha_inicio" name="fecha_inicio"><br>
+        <label for="fecha_fin">Fecha de Fin:</label><br>
+        <input type="date" id="fecha_fin" name="fecha_fin"><br>
+        <label for="descuento">Descuento:</label><br>
+        <input type="number" id="descuento" name="descuento" min="0" max="100"><br>
+        <input type="submit" value="Crear Promoción">
+    </form>
+    </body>
+</html>

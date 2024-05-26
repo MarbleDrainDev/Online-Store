@@ -1,0 +1,78 @@
+html{
+    background: #020000;
+background: linear-gradient(90deg,#020000 0%, #411430 80%);
+background: -webkit-linear-gradient(90deg,#020000 0%, #411430 80%);
+background: -moz-linear-gradient(90deg,#020000 0%, #411430 80%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+section.login {
+    border: solid 1px rgba(255, 255, 255, 0.392);
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+img.main {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputs img {
+    width: 30px; /* Ancho de los iconos de correo y contraseña */
+    height: 30px; /* Alto de los iconos de correo y contraseña */
+}
+
+input {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input::placeholder {
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(80, 0, 80);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(104, 0, 104);
+}
+
+label a {
+    color: rgb(143, 143, 143);
+}
+hr{
+    border: none;
+    background-color: white;
+    width: 80%;
+    height: 1px;
+    margin: 0px auto 20px;
+}
