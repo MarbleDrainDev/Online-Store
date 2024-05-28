@@ -1,0 +1,7 @@
+Número de factura: FACTURA_6656355844dd9
+
+Detalles de la compra:
+Producto: Mole
+Precio: 25000.00
+Cantidad: 1
+

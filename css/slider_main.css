@@ -24,7 +24,7 @@ body {
   text-align: center;
   font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  /* letter-spacing: 1px; */
   -webkit-transition: all 0.5s 1s;
   transition: all 0.5s 1s;
   -webkit-transform: translateY(-30px);
@@ -70,7 +70,7 @@ body {
 .slider__slide-subheading {
   margin-bottom: 20px;
   font-size: 24px;
-  letter-spacing: 2px;
+  /* letter-spacing: 1px; */
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
   opacity: 0;
@@ -89,7 +89,7 @@ body {
   display: flex;
   margin-bottom: 20px;
   font-size: 60px;
-  letter-spacing: 12px;
+  letter-spacing: 5px;
 }
 .slider__slide-heading span {
   display: block;

@@ -43,10 +43,6 @@ class ProductSlider extends React.Component {
     window.location.href = 'productos.php';
   }
 
-
-
-
-
   render() {
     const { activeSlide, prevSlide, sliderReady } = this.state;
     return (
@@ -84,19 +80,19 @@ class ProductSlider extends React.Component {
 
 const slides = [
 {
-  name: 'Iphone 14',
-  availability: 'Disponible!',
-  img: 'https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-hero-220907_Full-Bleed-Image.jpg.large.jpg' },
+  name: 'ElRinconEnchilado',
+  availability: 'Cra15#16-b',
+  img: 'https://hips.hearstapps.com/hmg-prod/images/mejores-restaurantes-mexicanos-moda-ticui-1675079095.jpg?crop=1xw:1xh;center,top&resize=980:*' },
 
 {
-  name: 'Earbuds',
-  availability: 'Disponible',
-  img: 'https://media.wired.com/photos/632b71c4f1e5c40d2b1bc705/191:100/w_1280,c_limit/AirPods-Pro-2nd-Gen-Gear.jpg' },
+  name: 'Tacos Picantes Elquetzal',
+  availability: 'Cra36#5-A',
+  img: 'https://media-cdn.tripadvisor.com/media/photo-w/12/d4/b6/73/la-taqueria-calle-116.jpg' },
 
 {
-  name: 'Ipad Pro',
-  availability: 'Disponible!',
-  img: 'https://www.apple.com/v/ipad-pro/al/images/meta/ipad-pro_overview__glcw458o4byq_og.png?202305310334' },
+  name: 'Fijistas Aztecas',
+  availability: 'Clle45#3-C!',
+  img: 'https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2022/10/mejores-restaurantes-para-comer-mole-cdmx-azul.jpg?w=1280&ssl=1' },
 
 ];
 
