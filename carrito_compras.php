@@ -1,5 +1,5 @@
 <?php
-// Conectar a la base de datos (reemplaza 'host', 'usuario', 'contraseña' y 'basededatos' con tus propios datos)
+// Establecer la conexión con la base de datos (reemplaza 'host', 'usuario', 'contraseña' y 'basededatos' con tus propios datos)
 $conexion = new mysqli('localhost:3306', 'root', '', 'restaurante');
 
 // Verificar la conexión
@@ -90,36 +90,15 @@ $conexion->close();
                 </div>
             <?php endwhile; ?>
             <!-- Botón para realizar la compra de todos los productos -->
-            <form action="realizar_compra.php" method="POST">
+            <form action="seleccionar_pago_ubicacion.php" method="GET">
+                <input type="hidden" name="ids_productos" value="1,2,3"> <!-- Ejemplo de IDs de productos -->
                 <button type="submit">Realizar Compra</button>
             </form>
         <?php else : ?>
             <p>No hay productos en el carrito de compras.</p>
         <?php endif; ?>
     </section>
-<!-- </body>
-<footer>
-    <div class="footer-container">
-        
-        <ul>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Términos y condiciones</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </div>
-    <div class="social-icons">
-        <a class="social-icon twitter" href="https://twitter.com/?lang=es">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a class="social-icon facebook" href="https://www.facebook.com/">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a class="social-icon instagram" href="https://www.instagram.com/">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a class="social-icon github" href="https://github.com/">
-            <i class="fab fa-tiktok"></i>
-        </a> 
-    <div></div>
-</footer> -->
+    <!-- Tu código HTML para el pie de página aquí... -->
+</body>
 </html>
+

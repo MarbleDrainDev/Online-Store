@@ -1,8 +1,8 @@
 html{
     background: #020000;
-background: linear-gradient(90deg,#020000 0%, #411430 80%);
-background: -webkit-linear-gradient(90deg,#020000 0%, #411430 80%);
-background: -moz-linear-gradient(90deg,#020000 0%, #411430 80%);
+    background: linear-gradient(90deg,#020000 0%, #411430 80%);
+    background: -webkit-linear-gradient(90deg,#020000 0%, #411430 80%);
+    background: -moz-linear-gradient(90deg,#020000 0%, #411430 80%);
 }
 
 main {
@@ -31,22 +31,30 @@ img.main {
 }
 
 .inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 10px; */
+
 }
 
 .inputs img {
+    display: inline-block;
     width: 30px; /* Ancho de los iconos de correo y contraseña */
     height: 30px; /* Alto de los iconos de correo y contraseña */
+    transform: translateY(8px)
 }
 
 input {
+    display: inline-block;
     padding: 10px;
     background-color: transparent;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    width: 90%;
+    margin-bottom: 10px;
+    color: white;
+    /* width: max-content; */
 }
 input::placeholder {
     text-align: center;

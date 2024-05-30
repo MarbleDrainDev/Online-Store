@@ -48,7 +48,7 @@ class ProductSlider extends React.Component {
   }
 
   redirectToInicioPage() {
-    window.location.href = 'productos.php';
+    window.location.href = 'login.html';
   }
 
   render() {

@@ -42,47 +42,79 @@
     <div id="app"></div>
 
     <section class="mainContent">
-        <?php
-        // Establecer la conexión con la base de datos (reemplaza 'host', 'usuario', 'contraseña' y 'basededatos' con tus propios datos)
-        $conexion = new mysqli('localhost:3306', 'root', '', 'restaurante');
+    <?php
+// Establecer la conexión con la base de datos (reemplaza 'host', 'usuario', 'contraseña' y 'basededatos' con tus propios datos)
+    $conexion = new mysqli('localhost:3306', 'root', '', 'restaurante');
 
-        // Verificar la conexión
-        if ($conexion->connect_error) {
-            die("Error de conexión: " . $conexion->connect_error);
-        }
+    // Verificar la conexión
+    if ($conexion->connect_error) {
+        die("Error de conexión: " . $conexion->connect_error);
+    }
 
-        // Consulta SQL para obtener los datos de la tabla Comida
-        $sql = "SELECT ID_Comida, Nombre, Descripcion, Precio FROM Comida";
-        $resultado = $conexion->query($sql);
+    // Consulta SQL para obtener todos los tipos de comida
+    $sql_tipos_comida = "SELECT ID_Tipo, Nombre FROM Tipo_De_Comida";
+    $resultado_tipos_comida = $conexion->query($sql_tipos_comida);
 
-        // Verificar si se obtuvieron resultados
-        if ($resultado->num_rows > 0) {
-            while ($fila = $resultado->fetch_assoc()) {
-                ?>
-                <div class="card">
-                    <img src="images/image8.jpg" alt="">
-                    <div class="cards">
-                        <h2><?php echo $fila['Nombre']; ?></h2>
-                        <h3><?php echo '$' . $fila['Precio']; ?></h3>
-                        <p><?php echo $fila['Descripcion']; ?></p>
-                        <!-- Formulario de compra -->
-                        <form action="carrito_compras.php" method="POST">
-                            <!-- Input oculto para enviar el ID del producto -->
-                            <input type="hidden" name="id_producto" value="<?php echo $fila['ID_Comida']; ?>">
-                            <!-- Botón para comprar -->
-                            <button type="submit">Comprar</button>
-                        </form>
-                    </div>
-                </div>
-                <?php
-            }
-        } else {
-            echo "No se encontraron resultados.";
-        }
-
-        // Cerrar la conexión
-        $conexion->close();
+    // Verificar si se obtuvieron resultados
+    if ($resultado_tipos_comida->num_rows > 0) {
         ?>
+        <form action="" method="GET">
+            <label for="tipo_comida">Seleccionar tipo de comida:</label>
+            <select name="tipo_comida" id="tipo_comida">
+                <option value="todos">Todos</option>
+                <?php while ($fila_tipo_comida = $resultado_tipos_comida->fetch_assoc()) { ?>
+                    <option value="<?php echo $fila_tipo_comida['ID_Tipo']; ?>"><?php echo $fila_tipo_comida['Nombre']; ?></option>
+                <?php } ?>
+            </select>
+            <button type="submit">Filtrar</button>
+        </form>
+        <?php
+    }
+
+    // Construir la consulta SQL base para obtener todas las comidas
+    $sql_comidas = "SELECT ID_Comida, Nombre, Descripcion, Precio FROM Comida";
+
+    // Verificar si se seleccionó un tipo de comida en el formulario y no es "todos"
+    if (isset($_GET['tipo_comida']) && $_GET['tipo_comida'] != 'todos') {
+        // Obtener el tipo de comida seleccionado
+        $tipo_comida_seleccionado = $_GET['tipo_comida'];
+
+        // Agregar el filtro por tipo de comida a la consulta SQL de comidas
+        $sql_comidas .= " WHERE ID_Tipo_Comida = $tipo_comida_seleccionado";
+    }
+
+    // Ejecutar la consulta SQL de comidas
+    $resultado_comidas = $conexion->query($sql_comidas);
+
+    // Verificar si se obtuvieron resultados
+    if ($resultado_comidas->num_rows > 0) {
+        while ($fila_comida = $resultado_comidas->fetch_assoc()) {
+            ?>
+            <div class="card">
+                <img src="images/image8.jpg" alt="">
+                <div class="cards">
+                    <h2><?php echo $fila_comida['Nombre']; ?></h2>
+                    <h3><?php echo '$' . $fila_comida['Precio']; ?></h3>
+                    <p><?php echo $fila_comida['Descripcion']; ?></p>
+                    <!-- Formulario de compra -->
+                    <form action="carrito_compras.php" method="POST">
+                        <!-- Input oculto para enviar el ID del producto -->
+                        <input type="hidden" name="id_producto" value="<?php echo $fila_comida['ID_Comida']; ?>">
+                        <!-- Botón para comprar -->
+                        <button type="submit">Comprar</button>
+                    </form>
+                </div>
+            </div>
+            <?php
+        }
+    } else {
+        echo "No se encontraron resultados.";
+    }
+
+    // Cerrar la conexión
+    $conexion->close();
+    ?>
+
     </section>
 
 
