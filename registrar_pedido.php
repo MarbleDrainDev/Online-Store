@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/registrar_pedido.css">
-    <title>Registrar Pedido</title>
+    <title>Document</title>
 </head>
 <body>
-    <h2>Registrar Pedido</h2>
-
-    <?php
-// Conectar a la base de datos (reemplaza 'host', 'usuario', 'contraseña' y 'basededatos' con tus propios datos)
+<?php
+// Establecer la conexión con la base de datos (reemplaza 'host', 'usuario', 'contraseña' y 'basededatos' con tus propios datos)
 $conexion = new mysqli('localhost:3306', 'root', '', 'restaurante');
 
 // Verificar la conexión
@@ -41,8 +38,8 @@ if ($conexion->query($sql_insert_estudiante) === TRUE) {
         $conexion->query($sql_insert_historial);
     }
 
-    // Insertar datos en la tabla Pago (suponiendo que hay una relación entre Historial_Pedido y Pago)
-    $sql_insert_pago = "INSERT INTO Pago (ID_HistorialPedido, ID_MetodoPago, Monto, Fecha_Pago) VALUES ((SELECT ID_HistorialPedido FROM Historial_Pedido WHERE ID_Estudiante = $id_estudiante LIMIT 1), $metodo_pago, 0.00, NOW())";
+    // Insertar datos en la tabla Pago (no incluir ID_HistorialPedido en la lista de columnas)
+    $sql_insert_pago = "INSERT INTO Pago (ID_HistorialPedido, ID_MetodoPago, Monto, Fecha_Pago) VALUES (LAST_INSERT_ID(), $metodo_pago, 0.00, NOW())";
     if ($conexion->query($sql_insert_pago) === TRUE) {
         echo "<p>Pedido registrado correctamente.</p>";
     } else {
@@ -55,5 +52,7 @@ if ($conexion->query($sql_insert_estudiante) === TRUE) {
 // Cerrar la conexión
 $conexion->close();
 ?>
+
+
 </body>
 </html>
