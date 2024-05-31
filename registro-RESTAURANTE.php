@@ -11,7 +11,7 @@
 
     <?php
     // Conexión a la base de datos
-    $conexion = new mysqli('localhost:3306', 'root', '', 'restaurante');
+    $conexion = new mysqli('localhost:3306', 'root', 'G0r1ll4szoe120.', 'restaurante');
 
     // Verificar la conexión
     if ($conexion->connect_error) {

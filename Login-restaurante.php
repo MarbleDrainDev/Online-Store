@@ -3,7 +3,7 @@
 session_start();
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost:3306", "root", "", "restaurante");
+$conexion = mysqli_connect("localhost:3306", "root", "G0r1ll4szoe120.", "restaurante");
 
 // Verificar la conexión
 if (!$conexion) {
