@@ -2,7 +2,7 @@
 // Conexión a la base de datos
 $servername = "localhost:3306";
 $username = "root";
-$password = "";
+$password = "1234";
 $database = "restaurante"; // Nombre de la base de datos
 
 $conn = new mysqli($servername, $username, $password, $database);
